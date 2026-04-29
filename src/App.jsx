@@ -215,7 +215,15 @@ export default function App() {
         <main>
           {/* Hero */}
           <section style={{ position: "relative", minHeight: "90vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&fit=crop')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.25)" }} />
+            <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: "brightness(0.3)" }}
+>
+  <source src="https://videos.pexels.com/video-files/2795405/2795405-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+</video>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(230,57,70,0.1) 100%)" }} />
             <div style={{ position: "relative", maxWidth: 1200, margin: "0 auto", padding: "80px 20px" }}>
               <p style={{ color: "#e63946", fontSize: 12, letterSpacing: 4, textTransform: "uppercase", marginBottom: 16 }}>🏍️ Colombia — Gearly</p>
