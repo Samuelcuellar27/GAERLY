@@ -84,8 +84,8 @@ export default function App() {
       {/* HEADER */}
       <header className="header">
         <div className="header-inner">
-          <button onClick={() => goTo("home")} className="logo">
-            GEAR<span className="logo-accent">LY</span>
+          <button onClick={() => goTo("home")} className="logo-btn" aria-label="Volver al inicio">
+            <img src="/images/logo.jpg" alt="GEARLY Logo" className="header-logo-img" />
           </button>
 
           <nav className="nav-desktop">

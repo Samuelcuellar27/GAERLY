@@ -192,6 +192,28 @@ button { font-family: inherit; }
 .logo:hover { opacity: 0.85; }
 .logo-accent { color: var(--accent); }
 
+.logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: opacity var(--duration-fast);
+}
+
+.logo-btn:hover {
+  opacity: 0.85;
+}
+
+.header-logo-img {
+  height: 44px; /* Fits elegantly within 64px header, preserving clean padding */
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+
 .nav-desktop {
   display: flex;
   gap: 32px;
