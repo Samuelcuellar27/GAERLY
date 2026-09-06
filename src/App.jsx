@@ -32,7 +32,7 @@ export default function App() {
 
   const cartTotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
-  const shipping = cartTotal >= 150000 ? 0 : 10000;
+  const shipping = 10000;
 
   const showToast = (message) => {
     setToast(message);
@@ -258,28 +258,6 @@ export default function App() {
             </div>
           </section>
 
-          {/* Testimonials */}
-          <section className="section">
-            <div style={{ textAlign: "center", marginBottom: 48 }}>
-              <p className="section-tag">La voz de la comunidad</p>
-              <h2 className="section-title">TESTIMONIOS</h2>
-            </div>
-            <div className="testimonials-grid">
-              {[
-                { name: "Juan D.", city: "Medellín", text: "El soporte para celular aguanta los baches más duros de la ciudad sin moverse un milímetro. Envío súper rápido." },
-                { name: "Camila R.", city: "Bogotá", text: "Los guantes tienen un agarre excelente y el material se siente súper resistente y fino. Sin duda volveré a comprar." },
-                { name: "Andrés M.", city: "Cali", text: "La cubierta impermeable protegió mi moto de las tormentas más densas. Calidad premium asegurada." }
-              ].map((t, idx) => (
-                <div className="testimonial-card" key={idx}>
-                  <div className="testimonial-stars">★★★★★</div>
-                  <p className="testimonial-text">"{t.text}"</p>
-                  <h4 className="testimonial-author">{t.name}</h4>
-                  <p className="testimonial-city">{t.city}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* CTA Banner */}
           <section className="cta-banner">
             <h2 className="cta-title">¿LISTO PARA LLEVAR TU RUTA AL SIGUIENTE NIVEL?</h2>
@@ -408,8 +386,6 @@ export default function App() {
                 <span className="detail-discount-tag">-{disc(selectedProduct.price, selectedProduct.originalPrice)}% OFF</span>
               </div>
 
-              <p className="detail-stock">● En stock — Despacho inmediato de 1 a 3 días hábiles</p>
-
               <div className="divider" />
 
               <p className="detail-description">{selectedProduct.description}</p>
@@ -443,7 +419,6 @@ export default function App() {
               </div>
 
               <div className="detail-perks">
-                <span>🚚 Envío Gratis en compras superiores a $150.000</span>
                 <span>🔒 Compra Segura</span>
                 <span>🔄 Garantía Directa</span>
               </div>
@@ -497,17 +472,6 @@ export default function App() {
 
               <div className="cart-summary">
                 <h3 className="cart-summary-title">Resumen del Pedido</h3>
-
-                {cartTotal < 150000 && (
-                  <div className="shipping-bar">
-                    <p>
-                      Agrega <strong>{fmt(150000 - cartTotal)}</strong> adicionales para obtener <strong>Envío Gratis 🎉</strong>
-                    </p>
-                    <div className="progress-track">
-                      <div className="progress-fill" style={{ width: `${Math.min(100, (cartTotal / 150000) * 100)}%` }} />
-                    </div>
-                  </div>
-                )}
 
                 <div className="summary-rows">
                   <div className="summary-row">
